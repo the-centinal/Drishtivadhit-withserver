@@ -119,10 +119,10 @@
             <div  class = "modal-login-input">
               <form class = "form" action="/login" method="POST">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="firstname" class = "login-input" required>
+                <input type="text" placeholder="Enter Username" name="firstname" class = "login-input" id = "firstname">
           
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="pass" class = "login-input" required>
+                <input type="password" placeholder="Enter Password" name="pass" id="pass" class = "login-input">
                 <button class="btn btn-primary" type="submit" >Login</button>
               </form>
             </div>
@@ -183,10 +183,10 @@
           <i class="fas fa-users avatar"></i>
           <div  class = "modal-login-input">
             <form action="/login" method="POST" class = "form">
-              <label for="uname"><b>Username</b></label>
+              <label for="firstname"><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="firstname" required>
         
-              <label for="psw"><b>Password</b></label>
+              <label for="pass"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="pass" required>
               <button class="btn btn-primary" >Login</button>
             </form>

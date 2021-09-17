@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
     firstname : {
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     lastname : {
         type:String,
@@ -47,7 +48,8 @@ const userSchema = new mongoose.Schema({
 
     emailid : {
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
 
     mob: {

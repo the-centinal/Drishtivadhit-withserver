@@ -1,13 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/dhri');
 
-mongoose.connect("mongodb://localhost:27017/mydatabase", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    // useCreateIndex: true
-}) .then(() => {
-    console.log("connection successfull");
+const db = mongoose.connection;
+db.on('error',console.error.bind("Error while connection to the server"));
 
-}) .catch((e) => {
-    console.log(e);
-});
+db.on('open',function(){
+    console.log('DataBase is up and running !!');
+})
+
+module.exports = db;
