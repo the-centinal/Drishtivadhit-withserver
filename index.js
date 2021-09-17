@@ -5,7 +5,6 @@ const path = require('path');
 const multer = require('multer');
 const db = require('./config/mongoose');
 const cookieParser = require('cookie-parser');
-const expresslayout = require('express-ejs-layouts');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-startagy');
@@ -23,7 +22,7 @@ app.use(express.static('./public'));
 
 
 app.use(session({
-    name: 'password_genrator',
+    name: 'local',
     // TODO change the secret before deployment in production mode
     secret: 'decodetoencode',
     saveUninitialized: false,

@@ -6,8 +6,9 @@ const LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy({
     usernameField: 'firstname'
 },
-function(name, password, done){
+function(firstname, pass, done){
     // find a user and establish the identity
+    console.log(firstname,pass);
     
     User.findOne({firstname : firstname}, function(err, user)  {
         if (err){
@@ -15,7 +16,7 @@ function(name, password, done){
             return done(err);
         }
 
-        if (!user || user.password != password){
+        if (!user || user.pass != pass){
             console.log('Invalid Username/Password');
             return done(null, false);
         }
@@ -55,7 +56,7 @@ passport.checkAuthentication = function(req, res, next){
     }
 
     // if the user is not signed in
-    return res.redirect('/sign-in');
+    return res.redirect('/loginmain');
 }
 
 passport.setAuthenticatedUser = function(req, res, next){
