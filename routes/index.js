@@ -3,15 +3,15 @@ const newsController = require('../controllers/newscontroller');
 const mainController = require('../controllers/maincontroller');
 const logController = require('../controllers/logcontroller');
 const docController = require('../controllers/doccontroller');
+
 const passport = require('passport');
 const passportLocal = require('../config/passport-local-startagy');
 const uploadfile = require('../config/uploadfile');
 
-
 const router = express.Router();
 
 
-// get requests
+// get requests english
 router.get('/',mainController.index);
 router.get('/profile',passport.checkAuthentication,mainController.profile);
 router.get('/app',mainController.app);
@@ -25,6 +25,11 @@ router.get('/docupload',mainController.docupload);
 router.get('/loginmain',mainController.loginmain);
 router.get('/event',mainController.event);
 
+
+
+// Get request hindi
+
+router.use('/hindi',require('./hindi'));
 
 // Post requests
 router.post('/register',logController.register);
