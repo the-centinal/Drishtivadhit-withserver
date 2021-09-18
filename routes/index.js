@@ -9,6 +9,10 @@ const uploadfile = require('../config/uploadfile');
 
 
 const router = express.Router();
+router.get('/profile',passport.checkAuthentication,mainController.profile);
+router.get('/app',mainController.app);
+router.get('/publicdocument',mainController.publicdoc);
+router.get('/goal',mainController.goal);
 
 router.get('/news',passport.checkAuthentication,newsController.news);
 router.get('/',mainController.index);

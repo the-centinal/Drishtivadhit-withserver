@@ -213,7 +213,7 @@ languagecontroler.addEventListener('change', function(e){
 	
 	if(languagecontroler.checked){
 		console.log('english');
-		location.replace('../index.html');
+		location.replace('..//');
 	}
 		
 	else{

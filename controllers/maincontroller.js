@@ -14,3 +14,15 @@ module.exports.donation = function(req,res){
 module.exports.loginmain = function(req,res){
     return res.render('loginmain');
 }
+module.exports.profile = function(req,res){
+    return res.render('loginmainprofile');
+}
+module.exports.app = function(req,res){
+    return res.render('app');
+}
+module.exports.publicdoc = function(req,res){
+    return res.render('public-document');
+}
+module.exports.goal = function(req,res){
+    return res.render('goal');
+}
