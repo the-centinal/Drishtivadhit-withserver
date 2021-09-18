@@ -10,7 +10,7 @@ const uploadfile = require('../config/uploadfile');
 
 const router = express.Router();
 
-router.get('/news',newsController.news);
+router.get('/news',passport.checkAuthentication,newsController.news);
 router.get('/',mainController.index);
 router.get('/register',mainController.register);
 router.get('/docupload',mainController.docupload);
@@ -26,8 +26,9 @@ router.post('/register',logController.register);
 // });
 router.post('/login',passport.authenticate('local',{
   failureRedirect: '/loginmain'}),function(req, res) {
+
     res.redirect('/');
   });
 
-router.post('/uploadmultiple',uploadfile.single("image"),docController.docupload);
+router.post('/uploadmultiple',passport.checkAuthentication ,docController.docupload);
 module.exports = router;

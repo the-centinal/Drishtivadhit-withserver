@@ -8,7 +8,7 @@ module.exports.register = async function(req,res){
         if(req.body.pass === req.body.cpass) {
 
             await User.create(req.body);
-            console.log('he');
+   
             return res.render('index');
      
      
