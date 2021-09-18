@@ -26,3 +26,9 @@ module.exports.publicdoc = function(req,res){
 module.exports.goal = function(req,res){
     return res.render('goal');
 }
+module.exports.member = function(req,res){
+    return res.render('member');
+}
+module.exports.event = function(req,res){
+    return res.render('event');
+}
