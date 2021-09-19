@@ -16,7 +16,7 @@ router.get('/donate',hidiMainController.donation);
 router.get('/docup',hidiMainController.docupload);
 router.get('/register',hidiMainController.register);
 router.get('/news',hidiMainController.news);
-// router.get('/app',hidiMainController.app);
+router.get('/profile',hidiMainController.profile);
 
 router.post('/login',passport.authenticate('local',{
     failureRedirect: '/hindi/loginmain'}),function(req, res) {

@@ -28,3 +28,6 @@ module.exports.docupload = function(req,res){
 module.exports.register = function(req,res){
     return res.render('hindi-pages/regester');
 }
+module.exports.profile = function(req,res){
+    return res.render('hindi-pages/profile');
+}

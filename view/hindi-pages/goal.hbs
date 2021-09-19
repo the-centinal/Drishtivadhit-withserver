@@ -66,7 +66,11 @@
 मुख्य</a></li>
        <li class="nav-item active"><a href="/hindi/goal" class="nav-link">लक्ष्य</a></li>
        <li class="nav-item"><a href="/hindi/member" class="nav-link">सदस्य</a></li>
-       <li class="nav-item"><a href="/hindi/loginmain" class="nav-link">लॉगिन </a></li>
+       {{#if user}}
+					<li class="nav-item"><a href="hindi/profile" class="nav-link">प्रोफ़ाइल</a></li>
+					{{else}}
+					<li class="nav-item"><a href="hindi/loginmain" class="nav-link">लॉगिन </a></li>
+					{{/if}}
        <li class="nav-item"><a href="/hindi/news" class="nav-link">समाचार</a></li>
        <li class="nav-item"><a href="/hindi/events" class="nav-link">
 कार्यक्रम</a></li>

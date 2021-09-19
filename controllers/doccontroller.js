@@ -16,7 +16,9 @@ module.exports.docupload = async function(req,res){
                 fileup: req.file.filename,
                 user: req.user._id
             })
-            return res.redirect('back');
+            return res.redirect('back',{
+                message: "uploaded successfully"
+            });
 
         });
     }
