@@ -36,13 +36,12 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use((req,res,next)=>{
-//     console.log(req.user);
-//     next();
-// })
+
 
 app.use(passport.setAuthenticatedUser);
 app.use(express.static('./public'));
+app.use('/public/uploads',express.static(__dirname + '/public/uploads'));
+
 
 
 

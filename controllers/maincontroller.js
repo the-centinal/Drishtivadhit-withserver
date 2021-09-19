@@ -1,3 +1,6 @@
+const Doc = require('../models/document');
+const { docupload } = require('./doccontroller');
+
 
 module.exports.index = function(req,res){
     return res.render('index');
@@ -14,9 +17,7 @@ module.exports.donation = function(req,res){
 module.exports.loginmain = function(req,res){
     return res.render('loginmain');
 }
-module.exports.profile = function(req,res){
-    return res.render('profile');
-}
+
 module.exports.app = function(req,res){
     return res.render('app');
 }
@@ -31,4 +32,13 @@ module.exports.member = function(req,res){
 }
 module.exports.event = function(req,res){
     return res.render('event');
+}
+module.exports.profile = async function(req,res){
+    try{
+        let documents = await Doc.find({user:req.user});
+        console.log(documents);
+        return res.render('profile',{documenents:documents});
+    }catch(err){
+        console.log("********* here is a error",err);
+    }
 }

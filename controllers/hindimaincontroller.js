@@ -1,3 +1,5 @@
+const Doc = require('../models/document');
+
 module.exports.index = function(req,res){
     return res.render('hindi-pages/index');
 }
@@ -28,6 +30,12 @@ module.exports.docupload = function(req,res){
 module.exports.register = function(req,res){
     return res.render('hindi-pages/regester');
 }
-module.exports.profile = function(req,res){
-    return res.render('hindi-pages/profile');
+module.exports.profile = async function(req,res){
+    try{
+        let documents = await Doc.find({user:req.user});
+        console.log(documents);
+        return res.render('hindi-pages/profile',{documenents:documents});
+    }catch(err){
+        console.log("********* here is a error",err);
+    }
 }

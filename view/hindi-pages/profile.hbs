@@ -133,79 +133,28 @@
                 <span class="subheading">Documents</span>
                 <h2 class = "mb-4">Your Documents</h2>
               </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate document-design">
+           {{#each documenents}}
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate document-design">
             
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 document-image-design" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20 document-image-design" >
+              <img src="{{this.fileup}}"class="block-20 document-image-design" alt="text">
               </a>
               <div class="text p-4">
                <div class="meta mb-2">
-                <div><a href="#">July 20, 2020</a></div>
+                <div><a href="#">{{this.updatedAt}}</a></div>
                 <div><a href="#">Admin</a></div>
                 <div><a href="#" class="meta-chat"><span class="fa fa-download"></span> 3K</a></div>
               </div>
-              <h3 class="heading"><a href="#">Blind Tracker App</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+              <h3 class="heading"><a href="#">{{this.title}}</a></h3>
+              <p>{{this.description}}</p>
               <p><a href="#" class="btn btn-secondary">Download</a></p>
             </div>
           </div>
         </div>
+            {{/each}}
 
-        <!-- apptwo for demo screen  -->
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate document-design">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 document-image-design" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4">
-               <div class="meta mb-2">
-                <div><a href="#">July 20, 2020</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="fa fa-download"></span> 3K</a></div>
-              </div>
-              <h3 class="heading"><a href="#">Blind Tracker App</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-              <p><a href="#" class="btn btn-secondary">Download</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- app 2 ends here -->
-        <!-- apptwo for demo screen  -->
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate document-design">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 document-image-design" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4">
-               <div class="meta mb-2">
-                <div><a href="#">July 20, 2020</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="fa fa-download"></span> 3K</a></div>
-              </div>
-              <h3 class="heading"><a href="#">Blind Tracker App</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-              <p><a href="#" class="btn btn-secondary">Download</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- app 2 ends here -->
-        <!-- apptwo for demo screen  -->
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate document-design">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 document-image-design" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4">
-               <div class="meta mb-2">
-                <div><a href="#">July 20, 2020</a></div>
-                <div><a href="#">Admin</a></div>
-                <div><a href="#" class="meta-chat"><span class="fa fa-download"></span> 3K</a></div>
-              </div>
-              <h3 class="heading"><a href="#">Blind Tracker App</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-              <p><a href="#" class="btn btn-secondary">Download</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- app 2 ends here -->
-       
+        
         
         </div>
         </div>
