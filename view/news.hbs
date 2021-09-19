@@ -63,8 +63,12 @@
        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
        <li class="nav-item"><a href="/goal" class="nav-link">Goal</a></li>
        <li class="nav-item"><a href="/member" class="nav-link">Members</a></li>
-       <li class="nav-item"><a href="login-main.html" class="nav-link">Login</a></li>
-       <li class="nav-item active"><a href="news.html" class="nav-link">News</a></li>
+        {{#if user}}
+					<li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+					{{else}}
+					<li class="nav-item"><a href="/loginmain" class="nav-link">Login</a></li>
+					{{/if}}
+       <li class="nav-item active"><a href="/news" class="nav-link">News</a></li>
        <li class="nav-item"><a href="/event" class="nav-link">Events</a></li>
      <li class="nav-item"><a href="/publicdocument" class="nav-link">Document</a></li>
           <li class="nav-item cta"><a href="/donation" class="nav-link">Donate</a></li>

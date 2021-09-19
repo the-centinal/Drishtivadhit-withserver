@@ -15,7 +15,7 @@ module.exports.loginmain = function(req,res){
     return res.render('loginmain');
 }
 module.exports.profile = function(req,res){
-    return res.render('loginmainprofile');
+    return res.render('profile');
 }
 module.exports.app = function(req,res){
     return res.render('app');
