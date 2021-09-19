@@ -9,7 +9,7 @@ module.exports.register = async function(req,res){
 
             await User.create(req.body);
    
-            return res.render('index');
+            return res.redirect('/');
      
      
     

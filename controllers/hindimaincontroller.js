@@ -26,5 +26,5 @@ module.exports.docupload = function(req,res){
     return res.render('hindi-pages/docupload');
 }
 module.exports.register = function(req,res){
-    return res,render('hindi-pages/donation');
+    return res.render('hindi-pages/regester');
 }

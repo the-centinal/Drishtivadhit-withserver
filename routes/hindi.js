@@ -13,7 +13,7 @@ router.get('/goal',hidiMainController.goal);
 router.get('/member',hidiMainController.members);
 router.get('/donate',hidiMainController.donation);
 router.get('/docup',hidiMainController.docupload);
-// router.get('/register',hidiMainController.re);
+router.get('/register',hidiMainController.register);
 router.get('/news',hidiMainController.news);
 // router.get('/app',hidiMainController.app);
 
