@@ -1,6 +1,7 @@
 const express = require('express');
 const hidiMainController = require('../controllers/hindimaincontroller');
-
+const passport = require('passport');
+const passportLocal = require('../config/passport-local-startagy');
 const router = express.Router();
 
 
@@ -17,7 +18,11 @@ router.get('/register',hidiMainController.register);
 router.get('/news',hidiMainController.news);
 // router.get('/app',hidiMainController.app);
 
-
+router.post('/login',passport.authenticate('local',{
+    failureRedirect: '/hindi/loginmain'}),function(req, res) {
+  
+      res.redirect('/hindi');
+    });
 
 
 module.exports =router;

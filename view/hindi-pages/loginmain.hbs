@@ -110,8 +110,7 @@
           <img class="card-img-top" src="../images/causes-2.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">शिक्षक के लिए लॉगिन</h5>
-            <p class="card-text">This is the section for teachers to login<br> Teachers can login hee and acoplish all
-              there task</p>
+            <p class="card-text">Tशिक्षकों के लिए लॉगिन करने के लिए उसका अनुभाग है शिक्षक ही लॉगिन कर सकते हैं और सभी को स्वीकार कर सकते हैं</p>
             <a class="btn btn-primary" id="myBtn">लॉगिन </a>
           </div>
         </div>
@@ -123,12 +122,12 @@
             <i class = "fas fa-chalkboard-teacher avatar"></i>
             <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
             <div  class = "modal-login-input">
-              <form action="submit" class = "form">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" class = "login-input"required>
+              <form class = "form" action="/hindi/login" method="POST">
+                <label for="firstname"><b>उपयोगकर्ता नाम</b></label>
+                <input type="text" placeholder="उपयोगकर्ता नाम" name="firstname" class = "login-input"required>
           
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" class = "login-input"required>
+                <label for="pass"><b>पासवर्ड</b></label>
+                <input type="password" placeholder="पासवर्ड दर्ज करें" name="pass" class = "login-input"required>
                 <button class="btn btn-primary">लॉगिन </button>
               </form>
             </div>
@@ -144,8 +143,8 @@
           <div class="card-body">
             <h5 class="card-title">
 अन्य सदस्य के लिए लॉगिन करें</h5>
-            <p class="card-text">This is the section for other employes to login <br> Other Employes can login hee and
-              acoplish all there task</p>
+            <p class="card-text">
+यह अन्य कर्मचारियों के लिए लॉगिन करने का अनुभाग है<br> अन्य कर्मचारी ही लॉग इन कर सकते हैं और सभी कार्यों को पूरा कर सकते हैं</p>
             <a  class="btn btn-primary" id="myBtn2">लॉगिन </a>
           </div>
         </div>
@@ -159,12 +158,13 @@
           <!-- <i class = "fas fa-chalkboard-teacher avatar"></i> -->
           <i class="fas fa-users avatar"></i>
           <div  class = "modal-login-input">
-            <form action="submit" class = "form">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <form class = "form" action="/hindi/login" method="POST">
+              <label for="firstname"><b>उपयोगकर्ता नाम</b></label>
+              <input type="text" placeholder="उपयोगकर्ता नाम" name="firstname" required>
         
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="pass"><b>पासवर्ड</b></label>
+              <input type="password" placeholder="पासवर्ड दर्ज करें" name="pass" required>
               <button class="btn btn-primary" >लॉगिन </button>
             </form>
           </div>
@@ -175,9 +175,10 @@
       <div class="card login-box mt-4 mb-4 card-member-login-box ftco-animate" style="width: 18rem;">
         <img class="card-img-top" src="../images/causes-2.jpg" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">अन्य सदस्य के लिए लॉगिन करें</h5>
-          <p class="card-text">This is the section for other employes to login <br> Other Employes can login hee and
-            acoplish all there task</p>
+          <h5 class="card-title">
+सदस्य लॉगिन</h5>
+          <p class="card-text">यह सदस्य  के लिए लॉगिन करने का अनुभाग है<br> 
+सदस्य ही लॉगिन कर सकते हैं और सभी कार्यों को पूरा कर सकते हैं</p>
           <a  class="btn btn-primary" id="myBtn3">लॉगिन </a>
         </div>
       </div>
@@ -189,12 +190,12 @@
           <!-- <i class = "fas fa-chalkboard-teacher avatar"></i> -->
           <i class="fas fa-users avatar"></i>
           <div  class = "modal-login-input">
-            <form action="submit" class = "form">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+            <form class = "form" action="/hindi/login" method="POST">
+              <label for="firstname"><b>उपयोगकर्ता नाम</b></label>
+              <input type="text" placeholder="उपयोगकर्ता नाम" name="firstname" required>
         
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="pass"><b>पासवर्ड</b></label>
+              <input type="password" placeholder="पासवर्ड दर्ज करें" name="pass" required>
               <button class="btn btn-primary" >लॉगिन </button>
             </form>
           </div>
