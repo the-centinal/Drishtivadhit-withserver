@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 const path = require('path');
 const file_path = path.join('/public/uploads');
 const multer = require('multer');
-const GridFsStorage = require("multer-gridfs-storage");
-const util = require("util");
-const docSchema = new mongoose.Schema({
+
+const pdocSchema = new mongoose.Schema({
     // userFiles : {
     //     type:Array,
     //     required:true
@@ -28,7 +27,7 @@ const docSchema = new mongoose.Schema({
       
 },  {timestamps: true});
 
-let filestorage = multer.diskStorage({destination:(req,res,cb)=>{
+let storage = multer.diskStorage({destination:(req,res,cb)=>{
     cb(null,path.join(__dirname,'..',file_path));
 },
 filename:(req,file,cb)=>{
@@ -36,10 +35,10 @@ filename:(req,file,cb)=>{
 },
 });
 
-docSchema.statics.uploadedFile = multer({storage:filestorage}).single('userFiles');
-docSchema.statics.filepath = file_path;
+pdocSchema.statics.uploadedFile = multer({storage:storage}).single('userFiles');
+pdocSchema.statics.filepath = file_path;
 // docSchema.statics.uploadedFile = multer({storage:storage}).single('userFiles');
 
-const Documents = new mongoose.model("Documents", docSchema);
+const PublicDocuments = new mongoose.model("PublicDocuments", pdocSchema);
 
-module.exports = Documents;
+module.exports = PublicDocuments

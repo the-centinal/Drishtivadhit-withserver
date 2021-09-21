@@ -17,6 +17,8 @@ router.get('/docup',hidiMainController.docupload);
 router.get('/register',hidiMainController.register);
 router.get('/news',hidiMainController.news);
 router.get('/profile',hidiMainController.profile);
+router.get('/publicdoc',hidiMainController.pdoc);
+
 
 router.post('/login',passport.authenticate('local',{
     failureRedirect: '/hindi/loginmain'}),function(req, res) {

@@ -12,6 +12,9 @@ module.exports.event = function(req,res){
 module.exports.goal = function(req,res){
     return res.render('hindi-pages/goal');
 }
+module.exports.pdoc = function(req,res){
+    return res.render('hindi-pages/public-document');
+}
 module.exports.loginmain = function(req,res){
     return res.render('hindi-pages/loginmain');
 }

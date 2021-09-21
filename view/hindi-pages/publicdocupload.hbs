@@ -3,10 +3,9 @@
 
 <head>
   <title>Drishtivadhit</title>
-   <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
@@ -69,22 +68,19 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-       <li class="nav-item"><a href="/hindi" class="nav-link">
-मुख्य</a></li>
-       <li class="nav-item"><a href="/hindi/goal" class="nav-link">लक्ष्य</a></li>
-       <li class="nav-item active"><a href="/hindi/member" class="nav-link">सदस्य</a></li>
-       {{#if user}}
-					<li class="nav-item"><a href="/hindi/profile" class="nav-link">प्रोफ़ाइल</a></li>
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/goal" class="nav-link">Goal</a></li>
+          <li class="nav-item"><a href="/member" class="nav-link">Members</a></li>
+          {{#if user}}
+					<li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
 					{{else}}
-					<li class="nav-item"><a href="/hindi/loginmain" class="nav-link">लॉगिन </a></li>
+					<li class="nav-item"><a href="/loginmain" class="nav-link">Login</a></li>
 					{{/if}}
-       <li class="nav-item"><a href="/hindi/news" class="nav-link">समाचार</a></li>
-       <li class="nav-item"><a href="/hindi/publicdoc" class="nav-link">डाक्यूमेंट</a></li>
-
-       <li class="nav-item"><a href="/hindi/events" class="nav-link">कार्यक्रम</a></li>
-       <li class="nav-item cta"><a href="/hindi/donate" class="nav-link">
-दान करे</a></li>
-     </ul>
+          <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="/event" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="/publicdocument" class="nav-link">Document</a></li>
+          <li class="nav-item cta"><a href="/donation" class="nav-link">Donate</a></li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -108,7 +104,7 @@
   <section class="ftco-section">
 
     <div class="upload-mail-container">
-      <form action="/uploadmultiple" enctype="multipart/form-data" method="POST" class="md-form" name="document">
+      <form action="/uploadpublic" enctype="multipart/form-data" method="POST" class="md-form" name="document">
         <div class="file-feild">
           <div class="upload-container">
             <div class="input-header mb-4">
@@ -175,11 +171,11 @@
           <h2 class="footer-heading">Quick Links</h2>
           <ul class="list-unstyled">
             <li><a href="/" class="py-2 d-block">Home</a></li>
-            <li><a href="/hindi/goal" class="py-2 d-block">Goal</a></li>
-            <li><a href="/hindi/member" class="py-2 d-block">Members</a></li>
+            <li><a href="/goal" class="py-2 d-block">Goal</a></li>
+            <li><a href="/member" class="py-2 d-block">Members</a></li>
             <li><a href="/event" class="py-2 d-block">New Events</a></li>
             <li><a href="news.html" class="py-2 d-block">News</a></li>
-            <li><a href="/hindi/loginmain" class="py-2 d-block">login</a></li>
+            <li><a href="login-main.html" class="py-2 d-block">login</a></li>
           </ul>
         </div>
         <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
@@ -210,7 +206,8 @@
     </div>
   </footer>
 
-  <script src="../js/jquery.min.js"></script>
+
+<script src="../js/jquery.min.js"></script>
 <script src="../js/jquery-migrate-3.0.1.min.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
@@ -226,6 +223,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="../js/google-map.js"></script>
 <script src="../js/main.js"></script>
+
 
 </body>
 
