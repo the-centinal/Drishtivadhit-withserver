@@ -47,3 +47,13 @@ module.exports.profile = async function(req,res){
         console.log("********* here is a error",err);
     }
 }
+
+module.exports.downloaddocument = async function (req,res){
+    try{
+        console.log('hitted button');
+
+    }
+    catch(err){
+        console.log("ERROR :::::::::::::::::::",err);
+    }
+}

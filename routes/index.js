@@ -26,7 +26,7 @@ router.get('/pdocupload',mainController.pdocupload);
 
 router.get('/loginmain',mainController.loginmain);
 router.get('/event',mainController.event);
-
+router.get('/downloaddoc',mainController.downloaddocument);
 
 
 // Get request hindi
