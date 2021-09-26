@@ -51,5 +51,5 @@ router.post('/login',passport.authenticate('local',{
 
 router.post('/uploadmultiple',passport.checkAuthentication ,docController.docupload);
 router.post('/uploadpublic',passport.checkAuthentication ,docController.pdocupload);
-
+router.post('/download',mainController.downloaddocument);
 module.exports = router;

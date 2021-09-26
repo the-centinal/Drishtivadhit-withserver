@@ -126,7 +126,11 @@
               </div>
               <h3 class="heading"><a href="#">{{this.title}}</a></h3>
               <p>{{this.description}}</p>
-              <p><a href="/downloaddoc&?{{this.fileup}}" class="btn btn-secondary">Download</a></p>
+              <form action="/download" method = "POST" >
+              <input type="text" name="file" id="filepath" hidden value = {{this.fileup}}>
+              <input type="submit" class="btn btn-secondary" value="Download">
+              </form>
+              {{!-- <p><a href="/downloaddoc&?{{this.fileup}}" class="btn btn-secondary">Download</a></p> --}}
             </div>
           </div>
         </div>
