@@ -1,4 +1,5 @@
 const Doc = require('../models/document');
+let P_Doc = require('../models/public_document');
 
 module.exports.index = function(req,res){
     return res.render('hindi-pages/index');
@@ -12,8 +13,10 @@ module.exports.event = function(req,res){
 module.exports.goal = function(req,res){
     return res.render('hindi-pages/goal');
 }
-module.exports.pdoc = function(req,res){
-    return res.render('hindi-pages/public-document');
+module.exports.pdoc = async function(req,res){
+    let pubicdoc = await P_Doc.find({});
+    return res.render('hindi-pages/public-document',{documenents:pubicdoc});
+    // return res.render('hindi-pages/public-document');
 }
 module.exports.loginmain = function(req,res){
     return res.render('hindi-pages/loginmain');

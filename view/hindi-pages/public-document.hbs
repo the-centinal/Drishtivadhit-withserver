@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Drishtivadhit</title>
+  <title>दृष्टिबाधित
+</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
@@ -22,71 +23,66 @@
   <link rel="stylesheet" href="../css/flaticon.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
   <div class="wrap">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 d-flex align-items-center text-head">
-          <p class="mb-0 phone pr-2">Hindi</p>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center text-head">
+        <p class="mb-0 phone pr-2">
+हिंदी</p>
           <label class="switch">
-            <input type="checkbox" name="" id="hindi-english-toggle">
-            <span class="slider"></span>
+            
+<input type="checkbox" name="" id="hindi-english-toggle">
+            <span class = "slider"></span>
           </label>
           <p class="mb-0 phone pl-2">English</p>
-          <a href="#" class="apps-link">
-            <p class="mb-0 phone pl-2 pr-4 ml-4">Apps</p>
-          </a>
+          <a href="/hindi/app" class = "apps-link"><p class="mb-0 phone pl-2 pr-4 ml-4">Apps</p></a>
 
-
-        </div>
-        <div class="col-md-6 d-flex justify-content-md-end">
-          <div class="social-media">
-            <p class="mb-0 d-flex">
-              <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i
-                    class="sr-only">Facebook</i></span></a>
-              <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i
-                    class="sr-only">Twitter</i></span></a>
-              <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i
-                    class="sr-only">Instagram</i></span></a>
-              <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i
-                    class="sr-only">Dribbble</i></span></a>
-            </p>
-          </div>
-        </div>
+        
       </div>
-    </div>
+   <div class="col-md-6 d-flex justify-content-md-end">
+    <div class="social-media">
+     <p class="mb-0 d-flex">
+      <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+      <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+      <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+      <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+    </p>
   </div>
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="/">Drishtivadhit</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
+</div>
+</div>
+</div>
+</div>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="/hindi" class="nav-link">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+ <div class="container">
+   <a class="navbar-brand" href="/hindi">दृष्टिबाधित</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="oi oi-menu"></span> Menu
+   </button>
+
+   <div class="collapse navbar-collapse" id="ftco-nav">
+     <ul class="navbar-nav ml-auto">
+       <li class="nav-item"><a href="/hindi" class="nav-link">
 मुख्य</a></li>
-					<li class="nav-item"><a href="/hindi/goal" class="nav-link">लक्ष्य</a></li>
-					<li class="nav-item"><a href="/hindi/member" class="nav-link">सदस्य</a></li>
-					{{#if user}}
+       <li class="nav-item"><a href="/hindi/goal" class="nav-link">लक्ष्य</a></li>
+       <li class="nav-item active"><a href="/hindi/member" class="nav-link">सदस्य</a></li>
+       {{#if user}}
 					<li class="nav-item"><a href="/hindi/profile" class="nav-link">प्रोफ़ाइल</a></li>
 					{{else}}
 					<li class="nav-item"><a href="/hindi/loginmain" class="nav-link">लॉगिन </a></li>
 					{{/if}}
-					<li class="nav-item"><a href="/hindi/news" class="nav-link">समाचार</a></li>
-       				<li class="nav-item active"><a href="/hindi/publicdoc" class="nav-link">डाक्यूमेंट</a></li>
+       <li class="nav-item"><a href="/hindi/news" class="nav-link">समाचार</a></li>
+       <li class="nav-item"><a href="/hindi/publicdoc" class="nav-link">डाक्यूमेंट</a></li>
 
-					<li class="nav-item"><a href="/hindi/events" class="nav-link">कार्यक्रम</a></li>
-					<li class="nav-item cta"><a href="/hindi/donate" class="nav-link">
+       <li class="nav-item"><a href="/hindi/events" class="nav-link">कार्यक्रम</a></li>
+       <li class="nav-item cta"><a href="/hindi/donate" class="nav-link">
 दान करे</a></li>
-				</ul>
-			</div>
-    </div>
-  </nav>
+     </ul>
+   </div>
+ </div>
+</nav>
   <!-- END nav -->
   
 

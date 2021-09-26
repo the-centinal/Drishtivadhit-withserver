@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/dhri');
+const db_path = process.env.DB;
+mongoose.connect(db_path);
 
 const db = mongoose.connection;
 db.on('error',console.error.bind("Error while connection to the server"));

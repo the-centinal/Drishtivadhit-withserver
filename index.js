@@ -1,4 +1,6 @@
+require("dotenv").config();
 const express = require('express');
+
 const port = process.env.PORT || 3000;
 const app = express();
 const path = require('path');
@@ -12,6 +14,7 @@ const MongoStore = require('connect-mongo');
 const mongodb = require('mongodb');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const { env } = require("process");
 app.use(express.urlencoded());
 app.use(express.json());
 app.set('view engine', 'hbs');
@@ -20,7 +23,7 @@ app.set('views', './view');
 app.use(bodyParser.json());
 app.use(session({
     name : 'secret',
-    secret:'letsincode',
+    secret:process.env.SECRET_KEY,
     saveUninitialized :false,
     resave:false,
     cookie:{
@@ -28,7 +31,7 @@ app.use(session({
 
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost/dhri',
+        mongoUrl: process.env.DB,
     
     })
     
