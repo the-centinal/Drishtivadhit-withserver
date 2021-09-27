@@ -26,7 +26,7 @@ router.get('/pdocupload',mainController.pdocupload);
 
 router.get('/loginmain',mainController.loginmain);
 router.get('/event',mainController.event);
-
+router.get('/downloaddoc',mainController.downloaddocument);
 
 
 // Get request hindi
@@ -51,5 +51,5 @@ router.post('/login',passport.authenticate('local',{
 
 router.post('/uploadmultiple',passport.checkAuthentication ,docController.docupload);
 router.post('/uploadpublic',passport.checkAuthentication ,docController.pdocupload);
-
+router.post('/download',mainController.downloaddocument);
 module.exports = router;

@@ -15,7 +15,7 @@ module.exports.news = async function(req,res){
 }
 module.exports.index = function(req,res){
     try{
-        return res.render('index.hbs')
+        return res.render('index.hbs');
 
     }catch(err){
         console.log("***********************error",err);

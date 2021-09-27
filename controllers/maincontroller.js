@@ -47,3 +47,18 @@ module.exports.profile = async function(req,res){
         console.log("********* here is a error",err);
     }
 }
+
+module.exports.downloaddocument = async function (req,res){
+    try{
+
+        const directory = (__dirname + "/.."+req.body.file).toString();
+        const img = '/home/priyanshu/Desktop/codes/backend/public/uploads/1632679003751--userFiles';
+        res.download(directory,"image.pdf",(err)=>{
+            if(err){console.log("Error",err);}
+        })
+
+    }
+    catch(err){
+        console.log("ERROR :::::::::::::::::::",err);
+    }
+}
