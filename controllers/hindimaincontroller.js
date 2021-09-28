@@ -45,3 +45,10 @@ module.exports.profile = async function(req,res){
         console.log("********* here is a error",err);
     }
 }
+module.exports.destroySession = function(req, res){
+    
+    req.logout();
+    req.flash('success','Logged out successfully');
+
+    return res.redirect('/hindi');
+}

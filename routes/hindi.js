@@ -18,11 +18,11 @@ router.get('/register',hidiMainController.register);
 router.get('/news',hidiMainController.news);
 router.get('/profile',hidiMainController.profile);
 router.get('/publicdoc',hidiMainController.pdoc);
-
+router.get('/logout',hidiMainController.destroySession);
 
 router.post('/login',passport.authenticate('local',{
     failureRedirect: '/hindi/loginmain'}),function(req, res) {
-  
+      req.flash('success','सफलतापूर्वक लॉग इन हो चुका है');
       res.redirect('/hindi');
     });
 

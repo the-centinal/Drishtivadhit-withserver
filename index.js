@@ -14,6 +14,8 @@ const MongoStore = require('connect-mongo');
 const mongodb = require('mongodb');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const flash = require('connect-flash');
+const flashMiddelware = require('./config/flas-middelware');
 const { env } = require("process");
 app.use(express.urlencoded());
 app.use(express.json());
@@ -42,6 +44,9 @@ app.use(passport.session());
 
 
 app.use(passport.setAuthenticatedUser);
+
+app.use(flash());
+app.use(flashMiddelware.setFlash);
 app.use(express.static('./public'));
 app.use('/public/uploads',express.static(__dirname + '/public/uploads'));
 
