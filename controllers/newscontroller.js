@@ -10,7 +10,7 @@ module.exports.news = async function(req,res){
 
     }catch(err){
         console.log("***********************error",err);
-        return res.send('error boi');
+        return res.send('Error in renderring news : ',err);
     }
 }
 module.exports.index = function(req,res){

@@ -35,7 +35,7 @@
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="/">Drishtivadhit</a>
+      <a class="navbar-brand" href="/">दृष्टिबाधित</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
@@ -43,19 +43,22 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/goal" class="nav-link">Goal</a></li>
-          <li class="nav-item"><a href="/member" class="nav-link">Members</a></li>
-          {{#if user}}
-					<li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+       <li class="nav-item"><a href="/hindi" class="nav-link">
+मुख्य</a></li>
+       <li class="nav-item"><a href="/hindi/goal" class="nav-link">लक्ष्य</a></li>
+       <li class="nav-item active"><a href="/hindi/member" class="nav-link">सदस्य</a></li>
+       {{#if user}}
+					<li class="nav-item"><a href="/hindi/profile" class="nav-link">प्रोफ़ाइल</a></li>
 					{{else}}
-					<li class="nav-item"><a href="/loginmain" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="/hindi/loginmain" class="nav-link">लॉगिन </a></li>
 					{{/if}}
-          <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
-          <li class="nav-item"><a href="/event" class="nav-link">Events</a></li>
-          <li class="nav-item"><a href="/publicdocument" class="nav-link">Document</a></li>
-          <li class="nav-item cta"><a href="/donation" class="nav-link">Donate</a></li>
-        </ul>
+       <li class="nav-item"><a href="/hindi/news" class="nav-link">समाचार</a></li>
+       <li class="nav-item"><a href="/hindi/publicdoc" class="nav-link">डाक्यूमेंट</a></li>
+
+       <li class="nav-item"><a href="/hindi/events" class="nav-link">कार्यक्रम</a></li>
+       <li class="nav-item cta"><a href="/hindi/donate" class="nav-link">
+दान करे</a></li>
+     </ul>
       </div>
     </div>
   </nav>
@@ -67,10 +70,10 @@
     <div class="container">
       <div class="row no-gutters slider-text align-items-end">
         <div class="col-md-9 ftco-animate pb-5">
-          <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home <i
-                  class="ion-ios-arrow-forward"></i></a></span> <span>Login <i class="ion-ios-arrow-forward"></i></span>
+          <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">मुख्य<i
+                  class="ion-ios-arrow-forward"></i></a></span> <span>प्रोफ़ाइल <i class="ion-ios-arrow-forward"></i></span>
           </p>
-          <h1 class="mb-0 bread">Members</h1>
+          <h1 class="mb-0 bread">सार्वजनिक दस्तावेज़ अपलोड</h1>
         </div>
       </div>
     </div>
@@ -83,7 +86,7 @@
         <div class="file-feild">
           <div class="upload-container">
             <div class="input-header mb-4">
-              <div>Upload Document </div>
+              <div>दस्तावेज़ अपलोड करें </div>
             </div>
             <div class="upload-file-section-input">
               <input type="file" name="userFiles" class="input-select-file"><br>
