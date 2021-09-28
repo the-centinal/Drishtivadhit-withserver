@@ -12,6 +12,8 @@ module.exports.register = async function(req,res){
         }
        } catch (error) {
            res.status(400).send(error);
+           req.flash('error',"Error in creating a user");
+
        }
     
 }
@@ -23,9 +25,13 @@ module.exports.createSession = function(req, res){
     return res.redirect('/profile');
 }
 module.exports.destroySession = function(req, res){
-    
+    try{
     req.logout();
     req.flash('success','Logged out successfully');
 
     return res.redirect('/');
+    }
+    catch(err){
+        req.flash('error','Error while logging out');
+    }
 }

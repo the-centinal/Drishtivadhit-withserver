@@ -52,9 +52,12 @@ module.exports.downloaddocument = async function (req,res){
     try{
 
         const directory = (__dirname + "/.."+req.body.file).toString();
-        const img = '/home/priyanshu/Desktop/codes/backend/public/uploads/1632679003751--userFiles';
+
         res.download(directory,"image.pdf",(err)=>{
-            if(err){console.log("Error",err);}
+            if(err){console.log("Error",err);
+            req.flash('error',"Error in downloading");
+
+        }
         })
 
     }

@@ -46,9 +46,15 @@ module.exports.profile = async function(req,res){
     }
 }
 module.exports.destroySession = function(req, res){
-    
+    try{
     req.logout();
-    req.flash('success','Logged out successfully');
-
+    req.flash('success','सफलतापूर्वक लॉग आउट हो चुका है');
     return res.redirect('/hindi');
+    }
+    catch(err){
+    req.flash('error','लॉग आउट करने में त्रुटि');
+
+    }
+
+    
 }
