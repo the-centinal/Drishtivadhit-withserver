@@ -4,7 +4,7 @@ module.exports.news = async function(req,res){
     try{
         const newsapi = await axios.get(process.env.NEWS_API)
         // console.log(newsapi.data.articles[0]);
-        return res.render('news.hbs',{articles : newsapi.data.articles});
+        return res.render('english-page/news',{articles : newsapi.data.articles});
 
 
 
@@ -15,7 +15,7 @@ module.exports.news = async function(req,res){
 }
 module.exports.index = function(req,res){
     try{
-        return res.render('index.hbs');
+        return res.render('english-page/index');
 
     }catch(err){
         console.log("***********************error",err);

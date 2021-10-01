@@ -35,14 +35,6 @@ router.use('/hindi',require('./hindi'));
 
 // Post requests
 router.post('/register',logController.register);
-// router.post('/login', function(req, res, next) {
-  
-//   passport.authenticate('local', function(err, user, info) {
-//       console.log(req.body);
-//       // console.log(err);
-//       console.log('info is ',info);
-//   })(req, res, next);
-// });
 router.post('/login',passport.authenticate('local',{
   failureRedirect: '/loginmain'}),logController.createSession);
 
