@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const db = process.env.DB;
 module.exports.register = async function(req,res){
     try{
 
