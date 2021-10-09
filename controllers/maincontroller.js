@@ -73,17 +73,25 @@ module.exports.downloaddocument = async function (req,res){
                 res.send(error);
             })
             .on('finish', ()=>{
-                // console.log("done downloading");
-                // res.flash('success','Done Downloading');
-                // console.log('kihiugbi');
+         
                 const directory = (__dirname +'/../' + filename).toString();
-            // console.log(directory);
-            res.download(directory,filename,(err)=>{
-                if(err){console.log("Error",err);
-                req.flash('error',"Error in downloading");
+          
+            res.download(directory,filename,async (err)=>{
+                if(err){
+                    console.log("Error",err);
+                    // req.flash('error',"Error in downloading");
 
-        }
-        })
+           
+        
+                }
+                fs.unlink(filename, function (err) {
+                    if (err) throw err;
+                    // if no error, file has been deleted successfully
+                    console.log('File deleted!');
+                });
+        
+            })
+       
             });
             
         
