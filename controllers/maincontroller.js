@@ -2,11 +2,9 @@ const Doc = require('../models/document');
 var mongoose = require('mongoose');
 let P_Doc = require('../models/public_document');
 const { docupload } = require('./doccontroller');
-var MongoClient = require('mongodb').MongoClient;
 const Grid = require('gridfs-stream');
 const db = require('../config/mongoose');
 const fs = require('fs');
-// const gfs = Grid(db, mongoose.mongo);
 const gfs = new mongoose.mongo.GridFSBucket(db,{bucketName: 'photos'});
 module.exports.index = function(req,res){
     return res.render('english-page/index');
