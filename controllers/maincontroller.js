@@ -96,12 +96,9 @@ module.exports.viewdoc = function(req,res){
                 
             }
         });
-        
-
     }catch(err){
         res.status(404).json({
             err : 'datanot found'+err,
         });
     }
-
 }
