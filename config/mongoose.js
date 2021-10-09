@@ -7,11 +7,10 @@ const Grid = require('gridfs-stream');
 const db =   mongoose.connection;
 db.on('error',console.error.bind("Error while connection to the server"));
 
-db.once('open',function(){
+db.once('open',async function(){
     console.log('DataBase is up and running !!');
-
-
 })
+
 
 // module.exports = {db:db,gfs:gfs};
 module.exports = db;

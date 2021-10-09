@@ -5,9 +5,9 @@ const { docupload } = require('./doccontroller');
 var MongoClient = require('mongodb').MongoClient;
 const Grid = require('gridfs-stream');
 const db = require('../config/mongoose');
-const gfs = Grid(db, mongoose.mongo);
 
-
+// const gfs = Grid(db, mongoose.mongo);
+const gfs = new mongoose.mongo.GridFSBucket(db,{bucketName: 'photos'});
 module.exports.index = function(req,res){
     return res.render('english-page/index');
 }
@@ -47,13 +47,10 @@ module.exports.profile = async function(req,res){
     try{
         let documents = await Doc.find({user:req.user});
 
-        
-      
-        gfs.collection('photos');
-        gfs.files.find().toArray(function(err,files){
-            if(!files || files.length === 0){console.log('no files')}
-            console.log(files);
-        })
+        // gfs.collection('photos');
+        gfs.find().toArray(function(err,files){
+           console.log(files);
+        });
 
         return res.render('english-page/profile',{documenents:documents});
     }catch(err){
@@ -78,4 +75,28 @@ module.exports.downloaddocument = async function (req,res){
     catch(err){
         console.log("ERROR :::::::::::::::::::",err);
     }
+}
+
+module.exports.viewdoc = function(req,res){
+    try{
+        gfs.find({filename: req.params.filename}).toArray((err,file) =>{
+            
+           
+            if(!file[0] || file.length[0] === 0){console.log('no files')}
+            // gfs.openDownloadStreamByName(file[0]).pipe(res);
+            console.log(file[0]);
+     
+         
+            // if(file[0].contentType === 'image/png'){
+                gfs.openDownloadStreamByName(req.params.filename).pipe(res);
+            // }
+        });
+        
+
+    }catch(err){
+        res.status(404).json({
+            err : 'datanot found'+err,
+        });
+    }
+
 }

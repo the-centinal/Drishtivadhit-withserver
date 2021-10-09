@@ -22,6 +22,7 @@ router.get('/donation',passport.checkAuthentication,mainController.donation);
 router.get('/news',passport.checkAuthentication,newsController.news);
 router.get('/register',mainController.register);
 router.get('/docupload',mainController.docupload);
+router.get('/document/:filename',mainController.viewdoc);
 router.get('/pdocupload',mainController.pdocupload);
 
 router.get('/loginmain',mainController.loginmain);

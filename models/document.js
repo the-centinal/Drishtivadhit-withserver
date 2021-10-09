@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const multer = require('multer');
 const path = require('path');
 const {GridFsStorage} = require("multer-gridfs-storage");
-const file_path = path.join('/public/uploads')
+
 const docSchema = new mongoose.Schema({
     // userFiles : {
     //     type:Array,
@@ -41,13 +41,13 @@ var storage = new GridFsStorage({
     file: (req, file) => {  
         return {
           bucketName: "photos",
-          filename: `${Date.now()}-bezkoder-${file.originalname}`,
+          filename: `${Date.now()}-pboss-${file.originalname}`,
         };
       }
   });
 
 docSchema.statics.uploadedFile = multer({storage:storage}).single('userFiles');
-docSchema.statics.filepath = file_path;
+docSchema.statics.filepath = "/document/";
 const Documents = new mongoose.model("Documents", docSchema);
 
 module.exports = Documents;

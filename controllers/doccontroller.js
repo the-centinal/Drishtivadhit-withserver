@@ -13,7 +13,7 @@ module.exports.docupload = async function(req,res){
             await Doc.create({
                 title: req.body.title,
                 description: req.body.description,
-                fileup: req.file.filename,
+                fileup: Doc.filepath + req.file.filename,
                 user: req.user._id
             })
             req.flash('success','Document uploaded successfully');
