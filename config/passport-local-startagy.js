@@ -16,7 +16,7 @@ function(firstname,pass,done){
             console.log('error in finding user');
             value = 'error in finding user';
 
-            return done("this is error",err);
+            return done("this is error" + err);
         }   
         if(!user || user.pass != pass){
             console.log('Invallid credentials');

@@ -41,7 +41,7 @@ var storage = new GridFsStorage({
     file: (req, file) => {  
         return {
           bucketName: "photos",
-          filename: `${Date.now()}-bezkoder-${file.originalname}`
+          filename: `${Date.now()}-bezkoder-${file.originalname}`,
         };
       }
   });

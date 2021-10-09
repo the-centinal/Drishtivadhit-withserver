@@ -10,12 +10,10 @@ module.exports.docupload = async function(req,res){
             if(err){
                 console.log('*****************Multer err ',err);
             }
-            console.log(req.body);
-            console.log(req.file);
             await Doc.create({
                 title: req.body.title,
                 description: req.body.description,
-                fileup: Doc.filepath + '/' + req.file.filename,
+                fileup: req.file.filename,
                 user: req.user._id
             })
             req.flash('success','Document uploaded successfully');

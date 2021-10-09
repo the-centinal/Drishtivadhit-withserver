@@ -2,9 +2,11 @@ const Doc = require('../models/document');
 var mongoose = require('mongoose');
 let P_Doc = require('../models/public_document');
 const { docupload } = require('./doccontroller');
-const GFS = require('../config/mongoose');
+var MongoClient = require('mongodb').MongoClient;
 const Grid = require('gridfs-stream');
-const gfs = Grid(process.env.DB, mongoose.mongo);
+const db = require('../config/mongoose');
+const gfs = Grid(db, mongoose.mongo);
+
 
 module.exports.index = function(req,res){
     return res.render('english-page/index');
@@ -44,9 +46,14 @@ module.exports.event = function(req,res){
 module.exports.profile = async function(req,res){
     try{
         let documents = await Doc.find({user:req.user});
-        gfs.collection('photos');
+
         
       
+        gfs.collection('photos');
+        gfs.files.find().toArray(function(err,files){
+            if(!files || files.length === 0){console.log('no files')}
+            console.log(files);
+        })
 
         return res.render('english-page/profile',{documenents:documents});
     }catch(err){
