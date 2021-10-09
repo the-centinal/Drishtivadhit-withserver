@@ -42,7 +42,8 @@ passport.deserializeUser(function(id, done){
     User.findById(id,function(err, user){
         if(err){
             console.log('error in signing in');
-        return doNotTrack(err);
+            console.log(err);
+        // return doNotTrack(err);
         } 
         return done(null, user);
     })
@@ -66,4 +67,4 @@ passport.setAuthenticatedUser = function(req,res,next){
     next();
 }
 
-module.exports = passport,value;
+module.exports = passport;

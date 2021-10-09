@@ -1,7 +1,10 @@
 const Doc = require('../models/document');
+var mongoose = require('mongoose');
 let P_Doc = require('../models/public_document');
 const { docupload } = require('./doccontroller');
-
+const GFS = require('../config/mongoose');
+const Grid = require('gridfs-stream');
+const gfs = Grid(process.env.DB, mongoose.mongo);
 
 module.exports.index = function(req,res){
     return res.render('english-page/index');
@@ -41,10 +44,14 @@ module.exports.event = function(req,res){
 module.exports.profile = async function(req,res){
     try{
         let documents = await Doc.find({user:req.user});
-        // console.log(documents);
+        gfs.collection('photos');
+        
+      
+
         return res.render('english-page/profile',{documenents:documents});
     }catch(err){
         console.log("********* here is a error",err);
+        req.flash('error',"Error in loading your profile");
     }
 }
 
