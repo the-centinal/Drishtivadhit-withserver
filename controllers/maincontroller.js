@@ -106,11 +106,7 @@ module.exports.downloaddocument = async function (req,res){
 module.exports.viewdoc = function(req,res){
     try{
         gfs.find({filename: req.params.filename}).toArray((err,file) =>{
-            
-           
             if(!file[0] || file.length[0] === 0){console.log('no files')}
-    
-      
             if(file[0].contentType === 'image/png' || file[0].contentType === 'image/jpg' || file[0].contentType === 'image/jpeg' ){
                 gfs.openDownloadStreamByName(req.params.filename).pipe(res);
             }else{
