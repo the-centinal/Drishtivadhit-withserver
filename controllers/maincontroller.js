@@ -60,7 +60,6 @@ module.exports.downloaddocument = async function (req,res){
             .pipe(fs.createWriteStream(filename))
             .on('error', ()=>{
                 console.log("Some error occurred in download:"+error);
-
                 res.send(error);
             })
             .on('finish', ()=>{
