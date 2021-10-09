@@ -46,12 +46,6 @@ module.exports.event = function(req,res){
 module.exports.profile = async function(req,res){
     try{
         let documents = await Doc.find({user:req.user});
-
-        // gfs.collection('photos');
-        // gfs.find().toArray(function(err,files){
-        //    console.log(files);
-        // });
-
         return res.render('english-page/profile',{documenents:documents});
     }catch(err){
         console.log("********* here is a error",err);
