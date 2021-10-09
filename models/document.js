@@ -22,15 +22,6 @@ const docSchema = new mongoose.Schema({
     }
       
 },  {timestamps: true});
-
-
-// var storage = new GridFsStorage({
-//     url: process.env.DB,
-//     options: { useNewUrlParser: true, useUnifiedTopology: true },
-//     filename:(req,file,cb)=>{
-//         cb(null,Date.now()+"--"+file.fieldname);
-//     }
-//   });
 var storage = new GridFsStorage({
     url: process.env.DB,
     options: { useNewUrlParser: true, useUnifiedTopology: true },
