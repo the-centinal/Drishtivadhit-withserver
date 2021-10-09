@@ -80,23 +80,15 @@ module.exports.downloaddocument = async function (req,res){
                 if(err){
                     console.log("Error",err);
                     // req.flash('error',"Error in downloading");
-
-           
-        
                 }
                 fs.unlink(filename, function (err) {
                     if (err) throw err;
                     // if no error, file has been deleted successfully
                     console.log('File deleted!');
                 });
-        
             })
        
             });
-            
-        
-       
-
     }
     catch(err){
         console.log("ERROR :::::::::::::::::::",err);
