@@ -4,10 +4,6 @@ const path = require('path');
 const {GridFsStorage} = require("multer-gridfs-storage");
 
 const docSchema = new mongoose.Schema({
-    // userFiles : {
-    //     type:Array,
-    //     required:true
-    // },
     title : {
         type:String,
         required:true
