@@ -61,10 +61,7 @@ module.exports.profile = async function(req,res){
 
 module.exports.downloaddocument = async function (req,res){
     try{
-
         const filename =req.params.file;
-      
-
         await gfs.openDownloadStreamByName(filename)
             .pipe(fs.createWriteStream(filename))
             .on('error', ()=>{
