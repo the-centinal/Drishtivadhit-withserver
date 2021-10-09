@@ -65,7 +65,7 @@ module.exports.downloaddocument = async function (req,res){
         const filename =req.params.file;
       
 
-        gfs.openDownloadStreamByName(filename)
+        await gfs.openDownloadStreamByName(filename)
             .pipe(fs.createWriteStream(filename))
             .on('error', ()=>{
                 console.log("Some error occurred in download:"+error);
@@ -73,9 +73,20 @@ module.exports.downloaddocument = async function (req,res){
                 res.send(error);
             })
             .on('finish', ()=>{
-                console.log("done downloading");
+                // console.log("done downloading");
                 // res.flash('success','Done Downloading');
+                // console.log('kihiugbi');
+                const directory = (__dirname +'/../' + filename).toString();
+            // console.log(directory);
+            res.download(directory,filename,(err)=>{
+                if(err){console.log("Error",err);
+                req.flash('error',"Error in downloading");
+
+        }
+        })
             });
+            
+        
        
 
     }
