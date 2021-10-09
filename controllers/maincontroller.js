@@ -5,7 +5,7 @@ const { docupload } = require('./doccontroller');
 var MongoClient = require('mongodb').MongoClient;
 const Grid = require('gridfs-stream');
 const db = require('../config/mongoose');
-
+const fs = require('fs');
 // const gfs = Grid(db, mongoose.mongo);
 const gfs = new mongoose.mongo.GridFSBucket(db,{bucketName: 'photos'});
 module.exports.index = function(req,res){
@@ -48,9 +48,9 @@ module.exports.profile = async function(req,res){
         let documents = await Doc.find({user:req.user});
 
         // gfs.collection('photos');
-        gfs.find().toArray(function(err,files){
-           console.log(files);
-        });
+        // gfs.find().toArray(function(err,files){
+        //    console.log(files);
+        // });
 
         return res.render('english-page/profile',{documenents:documents});
     }catch(err){
@@ -62,14 +62,21 @@ module.exports.profile = async function(req,res){
 module.exports.downloaddocument = async function (req,res){
     try{
 
-        const directory = (__dirname + "/.."+req.body.file).toString();
+        const filename =req.params.file;
+      
 
-        res.download(directory,"image.pdf",(err)=>{
-            if(err){console.log("Error",err);
-            req.flash('error',"Error in downloading");
+        gfs.openDownloadStreamByName(filename)
+            .pipe(fs.createWriteStream(filename))
+            .on('error', ()=>{
+                console.log("Some error occurred in download:"+error);
 
-        }
-        })
+                res.send(error);
+            })
+            .on('finish', ()=>{
+                console.log("done downloading");
+                // res.flash('success','Done Downloading');
+            });
+       
 
     }
     catch(err){
@@ -83,13 +90,14 @@ module.exports.viewdoc = function(req,res){
             
            
             if(!file[0] || file.length[0] === 0){console.log('no files')}
-            // gfs.openDownloadStreamByName(file[0]).pipe(res);
-            console.log(file[0]);
-     
-         
-            // if(file[0].contentType === 'image/png'){
+    
+      
+            if(file[0].contentType === 'image/png' || file[0].contentType === 'image/jpg' || file[0].contentType === 'image/jpeg' ){
                 gfs.openDownloadStreamByName(req.params.filename).pipe(res);
-            // }
+            }else{
+                gfs.openDownloadStreamByName('1633771292030-pboss-Artboard 7.png').pipe(res);
+                
+            }
         });
         
 
