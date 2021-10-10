@@ -12,7 +12,6 @@ module.exports.news = async function(req,res){
 module.exports.index = function(req,res){
     try{
         return res.render('english-page/index');
-
     }catch(err){
         console.log("***********************error",err);
         return res.send('error boi');

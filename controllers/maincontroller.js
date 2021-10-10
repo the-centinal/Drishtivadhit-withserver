@@ -2,7 +2,6 @@ const Doc = require('../models/document');
 var mongoose = require('mongoose');
 let P_Doc = require('../models/public_document');
 const { docupload } = require('./doccontroller');
-const Grid = require('gridfs-stream');
 const db = require('../config/mongoose');
 const fs = require('fs');
 const gfs = new mongoose.mongo.GridFSBucket(db, { bucketName: 'document' });
@@ -64,8 +63,8 @@ module.exports.downloaddocument = async function (req, res) {
                 const directory = (__dirname + '/../' + filename).toString();
                 res.download(directory, filename, async (err) => {
                     if (err) {
+                        // if error occures
                         console.log("Error", err);
-                        // req.flash('error',"Error in downloading");
                     }
                     fs.unlink(filename, function (err) {
                         if (err) throw err;

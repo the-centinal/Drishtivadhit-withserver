@@ -36,14 +36,6 @@ var storage = new GridFsStorage({
       }
   });
 
-// let storage = multer.diskStorage({destination:(req,res,cb)=>{
-//     cb(null,path.join(__dirname,'..',file_path));
-// },
-// filename:(req,file,cb)=>{
-//     cb(null,Date.now()+"--"+file.fieldname);
-// },
-// });
-
 pdocSchema.statics.uploadedFile = multer({storage:storage}).single('userFiles');
 pdocSchema.statics.filepath = "/document/";
 
