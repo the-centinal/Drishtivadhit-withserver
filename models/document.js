@@ -27,7 +27,7 @@ var storage = new GridFsStorage({
     options: { useNewUrlParser: true, useUnifiedTopology: true },
     file: (req, file) => {  
         return {
-          bucketName: "photos",
+          bucketName: "document",
           filename: `${Date.now()}-pboss-${file.originalname}`,
         };
       }

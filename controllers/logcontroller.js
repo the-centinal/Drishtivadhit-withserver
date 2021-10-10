@@ -14,14 +14,11 @@ module.exports.register = async function(req,res){
        } catch (error) {
            res.redirect('back');
            req.flash('error',"Error in creating a user");
-
        }
-    
 }
 
 
 module.exports.createSession = function(req, res){
-
     req.flash('success','Loggedin Successfully');
     return res.redirect('/profile');
 }

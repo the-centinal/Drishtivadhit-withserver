@@ -6,10 +6,6 @@ const {GridFsStorage} = require("multer-gridfs-storage");
 
 
 const pdocSchema = new mongoose.Schema({
-    // userFiles : {
-    //     type:Array,
-    //     required:true
-    // },
     title : {
         type:String,
         required:true
@@ -34,7 +30,7 @@ var storage = new GridFsStorage({
     options: { useNewUrlParser: true, useUnifiedTopology: true },
     file: (req, file) => {  
         return {
-          bucketName: "photos",
+          bucketName: "document",
           filename: `${Date.now()}-pboss-${file.originalname}`,
         };
       }

@@ -16,7 +16,6 @@ module.exports.goal = function(req,res){
 module.exports.pdoc = async function(req,res){
     let pubicdoc = await P_Doc.find({});
     return res.render('hindi-pages/public-document',{documenents:pubicdoc});
-    // return res.render('hindi-pages/public-document');
 }
 module.exports.loginmain = function(req,res){
     return res.render('hindi-pages/loginmain');
@@ -55,6 +54,4 @@ module.exports.destroySession = function(req, res){
     req.flash('error','लॉग आउट करने में त्रुटि');
 
     }
-
-    
 }

@@ -3,11 +3,7 @@ const axios = require('axios');
 module.exports.news = async function(req,res){
     try{
         const newsapi = await axios.get(process.env.NEWS_API)
-        // console.log(newsapi.data.articles[0]);
         return res.render('english-page/news',{articles : newsapi.data.articles});
-
-
-
     }catch(err){
         console.log("***********************error",err);
         return res.send('Error in renderring news : ',err);
