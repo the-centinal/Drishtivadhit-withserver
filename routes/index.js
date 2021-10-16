@@ -3,10 +3,12 @@ const newsController = require('../controllers/newscontroller');
 const mainController = require('../controllers/maincontroller');
 const logController = require('../controllers/logcontroller');
 const docController = require('../controllers/doccontroller');
+const donationcontroller = require('../controllers/donationcontroller');
 
 const passport = require('passport');
 const passportLocal = require('../config/passport-local-startagy');
 const uploadfile = require('../config/uploadfile');
+
 
 const router = express.Router();
 
@@ -28,6 +30,8 @@ router.get('/loginmain',mainController.loginmain);
 router.get('/event',mainController.event);
 router.get('/downloaddoc',mainController.downloaddocument);
 router.get('/logout',logController.destroySession);
+router.get('/donationthanks',donationcontroller.donationthanks);
+
 
 // Get request hindi
 
@@ -41,4 +45,5 @@ router.post('/login',passport.authenticate('local',{
 router.post('/uploadmultiple',passport.checkAuthentication ,docController.docupload);
 router.post('/uploadpublic',passport.checkAuthentication ,docController.pdocupload);
 router.post('/download',mainController.downloaddocument);
+router.post('/newDonation',donationcontroller.sendDonation);
 module.exports = router;
