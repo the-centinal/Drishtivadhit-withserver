@@ -46,4 +46,6 @@ router.post('/login',passport.authenticate('local',{
 router.post('/uploadmultiple',passport.checkAuthentication ,docController.docupload);
 router.post('/uploadpublic',passport.checkAuthentication ,docController.pdocupload);
 router.get('/download/document/:file',mainController.downloaddocument);
+router.post('/newDonation',donationcontroller.sendDonation);
+
 module.exports = router;

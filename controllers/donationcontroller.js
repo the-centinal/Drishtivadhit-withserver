@@ -7,6 +7,7 @@ const rzpInstance = new Razorpay({
 
 
 module.exports.sendDonation = function(req,res){
+    console.log(req.body);
     const name = req.body.name;
     const email = req.body.email;
     
@@ -39,6 +40,7 @@ module.exports.sendDonation = function(req,res){
         if(error) {
             console.log(error);
         } else {
+            console.log(invoice);
             const invoiceId = invoice.id.toString();
             const orderId = invoice.order_id.toString();
             const customerDetails = {

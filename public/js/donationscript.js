@@ -12,6 +12,7 @@ document.getElementById("rzpButton").onclick = function(e) {
     } else {
         const choice = confirm("About to redirect to Razorpay payment page. Please acknowledge.");
         if(choice == true) {
+            // console.log(email);
             fetch("/newDonation", {
                 method: "post",
                 credentials: "same-origin",
