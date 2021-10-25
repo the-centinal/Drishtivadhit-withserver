@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require('express');
-
 const port = process.env.PORT || 3000;
 const app = express();
 const path = require('path');
@@ -30,7 +29,6 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge:(1000*60*1000),
-
     },
     store: MongoStore.create({
         mongoUrl: process.env.DB,
@@ -41,18 +39,12 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 app.use(passport.setAuthenticatedUser);
 
 app.use(flash());
 app.use(flashMiddelware.setFlash);
 app.use(express.static('./public'));
 app.use('/public/uploads',express.static(__dirname + '/public/uploads'));
-
-
-
-
 
 app.use('/',require('./routes'));
 app.listen(port,function(err){

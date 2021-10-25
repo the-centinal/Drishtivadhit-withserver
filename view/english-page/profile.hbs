@@ -46,7 +46,7 @@
           <li class="nav-item"><a href="/goal" class="nav-link">Goal</a></li>
           <li class="nav-item"><a href="/member" class="nav-link">Members</a></li>
           {{#if user}}
-					<li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+					<li class="nav-item active"><a href="/profile" class="nav-link">Profile</a></li>
 					{{else}}
 					<li class="nav-item"><a href="/loginmain" class="nav-link">Login</a></li>
 					{{/if}}
@@ -121,8 +121,8 @@
             <div class="col-md-6 col-lg-3 d-flex ftco-animate document-design">
             
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 document-image-design" >
-              <img src="{{this.fileup}}"class="block-20 document-image-design" alt="text">
+              <a href="3" class="block-20 document-image-design" >
+              <img src="{{this.fileup}}" class="block-20 document-image-design" alt="text">
               </a>
               <div class="text p-4">
                <div class="meta mb-2">
@@ -132,10 +132,7 @@
               </div>
               <h3 class="heading"><a href="#">{{this.title}}</a></h3>
               <p>{{this.description}}</p>
-              <form action="/download" method = "POST" >
-              <input type="text" name="file" id="filepath" hidden value = {{this.fileup}}>
-              <input type="submit" class="btn btn-secondary" value="Download">
-              </form>
+              <a href="/download{{this.fileup}}" class="btn btn-secondary" >Download</a>
             </div>
           </div>
         </div>
@@ -200,7 +197,7 @@
 						<li><a href="/member" class="py-2 d-block">Members</a></li>
 						<li><a href="/event" class="py-2 d-block">New Events</a></li>
 						<li><a href="news.html" class="py-2 d-block">News</a></li>
-						<li><a href="login-main.html" class="py-2 d-block">login</a></li>
+						<li><a href="/loginmain" class="py-2 d-block">login</a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
