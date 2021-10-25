@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 const localStratagy = require('passport-local').Strategy;
-
+let value = '';
 const User = require('../models/user');
 passport.use(new localStratagy({
     usernameField: 'firstname',
@@ -14,10 +14,14 @@ function(firstname,pass,done){
             
         if(err){
             console.log('error in finding user');
+            value = 'error in finding user';
+
             return done("this is error",err);
         }   
         if(!user || user.pass != pass){
             console.log('Invallid credentials');
+            value = 'Invallid credentials';
+            // req.flash('error','Invallid credentials');
             return done(null, false);
         }
         return done(null, user);
@@ -62,4 +66,4 @@ passport.setAuthenticatedUser = function(req,res,next){
     next();
 }
 
-module.exports = passport;
+module.exports = passport,value;

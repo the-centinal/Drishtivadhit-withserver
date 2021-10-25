@@ -27,7 +27,7 @@ router.get('/pdocupload',mainController.pdocupload);
 router.get('/loginmain',mainController.loginmain);
 router.get('/event',mainController.event);
 router.get('/downloaddoc',mainController.downloaddocument);
-
+router.get('/logout',logController.destroySession);
 
 // Get request hindi
 
@@ -35,19 +35,8 @@ router.use('/hindi',require('./hindi'));
 
 // Post requests
 router.post('/register',logController.register);
-// router.post('/login', function(req, res, next) {
-  
-//   passport.authenticate('local', function(err, user, info) {
-//       console.log(req.body);
-//       // console.log(err);
-//       console.log('info is ',info);
-//   })(req, res, next);
-// });
 router.post('/login',passport.authenticate('local',{
-  failureRedirect: '/loginmain'}),function(req, res) {
-
-    res.redirect('/');
-  });
+  failureRedirect: '/loginmain'}),logController.createSession);
 
 router.post('/uploadmultiple',passport.checkAuthentication ,docController.docupload);
 router.post('/uploadpublic',passport.checkAuthentication ,docController.pdocupload);

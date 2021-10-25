@@ -4,45 +4,45 @@ const { docupload } = require('./doccontroller');
 
 
 module.exports.index = function(req,res){
-    return res.render('index');
+    return res.render('english-page/index');
 }
 module.exports.register = function(req,res){
-    return res.render('register');
+    return res.render('english-page/register');
 }
 module.exports.docupload = function(req,res){
-    return res.render('docupload');
+    return res.render('english-page/docupload');
 }
 module.exports.pdocupload = function(req,res){
-    return res.render('publicdocupload');
+    return res.render('english-page/publicdocupload');
 }
 module.exports.donation = function(req,res){
-    return res.render('donation');
+    return res.render('english-page/donation');
 }
 module.exports.loginmain = function(req,res){
-    return res.render('loginmain');
+    return res.render('english-page/loginmain');
 }
 
 module.exports.app = function(req,res){
-    return res.render('app');
+    return res.render('english-page/app');
 }
 module.exports.publicdoc = async function(req,res){
     let pubicdoc = await P_Doc.find({});
-    return res.render('public-document',{documenents:pubicdoc});
+    return res.render('english-page/public-document',{documenents:pubicdoc});
 }
 module.exports.goal = function(req,res){
-    return res.render('goal');
+    return res.render('english-page/goal');
 }
 module.exports.member = function(req,res){
-    return res.render('member');
+    return res.render('english-page/member');
 }
 module.exports.event = function(req,res){
-    return res.render('event');
+    return res.render('english-page/event');
 }
 module.exports.profile = async function(req,res){
     try{
         let documents = await Doc.find({user:req.user});
         // console.log(documents);
-        return res.render('profile',{documenents:documents});
+        return res.render('english-page/profile',{documenents:documents});
     }catch(err){
         console.log("********* here is a error",err);
     }
@@ -52,9 +52,12 @@ module.exports.downloaddocument = async function (req,res){
     try{
 
         const directory = (__dirname + "/.."+req.body.file).toString();
-        const img = '/home/priyanshu/Desktop/codes/backend/public/uploads/1632679003751--userFiles';
+
         res.download(directory,"image.pdf",(err)=>{
-            if(err){console.log("Error",err);}
+            if(err){console.log("Error",err);
+            req.flash('error',"Error in downloading");
+
+        }
         })
 
     }
